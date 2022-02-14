@@ -6,7 +6,7 @@ categories:
       - 'feature'
   - title: '🐛 Bug Fixes'
     labels:
-      - 'fix'
+      - 'bug'
   - title: '🧰 Maintenance'
     label: 'chore'
   - title: '📚 Documentation'
@@ -47,11 +47,13 @@ autolabeler:
       - '/\bdocs\b/i'
     body:
       - '/^- \[x\] Documentation/m'
-  - label: 'fix'
+  - label: 'bug'
     branch:
       - '/fix\b/'
+      - '/bug\b/'
     title:
       - '/\bfix\b/i'
+      - '/\bbug\b/i'
     body:
       - '/^- \[x\] Bug fixes/m'
   - label: 'feature'
