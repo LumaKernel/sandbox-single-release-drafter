@@ -22,11 +22,13 @@ jobs:
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --prefer-offline]
+      - run: |
+          echo "${{ github.ref }}"
   test-build-publish:
     name: Test Build and Publish
     needs: cache-pnpm
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tag/v')
+    if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -55,7 +57,7 @@ jobs:
         name: Configure npm token
         run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
       - run: |
-          VERSION="$(node -e 'console.log(process.argv[1].match(/^refs\/tag\/v(\d+\.\d+\.\d+)$/)[1])' "${{ github.refs }}")"
+          VERSION="$(node -e 'console.log(process.argv[1].match(/^refs\/tags\/v(\d+\.\d+\.\d+)$/)[1])' "${{ github.refs }}")"
           node -e 'console.log(JSON.stringify({...require("./package.json"),version:process.argv[1]}, null, 2))' "$VERSION" > ./package.json
       - run: npm publish
         env:
