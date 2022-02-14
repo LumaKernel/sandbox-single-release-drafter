@@ -37,7 +37,7 @@ autolabeler:
     title:
       - '/\bchore\b/i'
     body:
-      - '/^- \[x\] Maintenance/'
+      - '/^- \[x\] Maintenance/m'
   - label: 'documentation'
     files:
       - '*.md'
@@ -46,14 +46,14 @@ autolabeler:
     title:
       - '/\bdocs\b/i'
     body:
-      - '/^- \[x\] Documentation/'
+      - '/^- \[x\] Documentation/m'
   - label: 'fix'
     branch:
       - '/fix\b/'
     title:
       - '/\bfix\b/i'
     body:
-      - '/^- \[x\] Bug fixes/'
+      - '/^- \[x\] Bug fixes/m'
   - label: 'feature'
     branch:
       - '/feature\b/'
@@ -62,4 +62,4 @@ autolabeler:
       - '/\bfeature\b/'
       - '/\bfeat\b/'
     body:
-      - '/^- \[x\] Features/'
+      - '/^- \[x\] Features/m'
