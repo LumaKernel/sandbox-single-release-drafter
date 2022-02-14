@@ -2,11 +2,7 @@ name: Test Build and Publish
 
 on:
   push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
 
 jobs:
   cache-pnpm:
