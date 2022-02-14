@@ -57,7 +57,7 @@ jobs:
         name: Configure npm token
         run: pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
       - run: |
-          VERSION="$(node -e 'console.log(process.argv[1].match(/^refs\/tags\/v(\d+\.\d+\.\d+)$/)[1])' "${{ github.refs }}")"
+          VERSION="$(node -e 'console.log(process.argv[1].match(/^refs\/tags\/v(\d+\.\d+\.\d+)$/)[1])' "${{ github.ref }}")"
           node -e 'console.log(JSON.stringify({...require("./package.json"),version:process.argv[1]}, null, 2))' "$VERSION" > ./package.json
       - run: npm publish
         env:
