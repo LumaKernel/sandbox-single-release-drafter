@@ -6,7 +6,7 @@ categories:
       - 'feature'
   - title: '🐛 Bug Fixes'
     labels:
-      - 'fix'
+      - 'bug'
   - title: '🧰 Maintenance'
     label: 'chore'
   - title: '📚 Documentation'
@@ -37,7 +37,7 @@ autolabeler:
     title:
       - '/\bchore\b/i'
     body:
-      - '/^- \[x\] Maintenance/'
+      - '/^- \[x\] Maintenance/m'
   - label: 'documentation'
     files:
       - '*.md'
@@ -46,14 +46,16 @@ autolabeler:
     title:
       - '/\bdocs\b/i'
     body:
-      - '/^- \[x\] Documentation/'
-  - label: 'fix'
+      - '/^- \[x\] Documentation/m'
+  - label: 'bug'
     branch:
       - '/fix\b/'
+      - '/bug\b/'
     title:
       - '/\bfix\b/i'
+      - '/\bbug\b/i'
     body:
-      - '/^- \[x\] Bug fixes/'
+      - '/^- \[x\] Bug fixes/m'
   - label: 'feature'
     branch:
       - '/feature\b/'
@@ -62,4 +64,4 @@ autolabeler:
       - '/\bfeature\b/'
       - '/\bfeat\b/'
     body:
-      - '/^- \[x\] Features/'
+      - '/^- \[x\] Features/m'
