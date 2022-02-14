@@ -1,0 +1,11 @@
+.DS_Store
+.vscode/
+.idea/
+node_modules/
+*.local
+dist/
+.pnpm-debug.log*
+.pnp/
+coverage/
+out/
+build/

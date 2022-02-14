@@ -1,0 +1,17 @@
+{
+  "name": "@luma-sandbox/single-release-drafter",
+  "version": "0.0.0",
+  "homepage": "https://github.com/LumaKernel/single-release-drafter#readme",
+  "bugs": {
+    "url": "https://github.com/LumaKernel/single-release-drafter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LumaKernel/single-release-drafter.git"
+  },
+  "bin": {
+    "luma_sand_single_rd": "./bin/luma_sand_single_rd.js"
+  },
+  "license": "MIT",
+  "author": "Luma <world@luma.email>"
+}
