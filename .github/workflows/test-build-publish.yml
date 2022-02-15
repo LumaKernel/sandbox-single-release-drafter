@@ -61,7 +61,8 @@ jobs:
           echo aaaaa111111
           node -e 'console.log(JSON.stringify({...require("./package.json"),version:process.argv[1]}, null, 2))' "$VERSION"
           echo aaaaa111111
-          node -e 'console.log(JSON.stringify({...require("./package.json"),version:process.argv[1]}, null, 2))' "$VERSION" | tee ./package.json
+          node -e 'console.log(JSON.stringify({...require("./package.json"),version:process.argv[1]}, null, 2))' "$VERSION" | tee ./tmp-package.json
+          cp ./tmp-package.json ./package.json
           echo aaaaa111111
           cat package.json
           echo aaaaa111111
